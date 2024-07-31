@@ -1,11 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import { render } from "react-dom";
+import HomePage from "./Homepage";
+import RoomJoinPage from "./RoomJoinPage";
+import CreateRoomPage from "./CreateRoomPage";
 
-function App() {
-  return <h1>Test 123</h1>;
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <HomePage />
+        <RoomJoinPage />
+        <CreateRoomPage />
+      </div>
+    );
+  }
 }
 
-export default App;
-
 const appDiv = document.getElementById("app");
-render(<App />, appDiv);
+render(<App name="test name" />, appDiv);
